@@ -22,12 +22,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RfT-zB-696">
+                                <rect key="frame" x="159" y="519" width="75" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                <connections>
+                                    <action selector="didTapButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3DN-bs-tq9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Ei2-im-RZw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5u4-g4-ghs"/>
                             <constraint firstItem="Ei2-im-RZw" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="DmE-Ud-G53"/>
+                            <constraint firstItem="RfT-zB-696" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="110.5" id="HSf-FE-klt"/>
+                            <constraint firstItem="RfT-zB-696" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="u00-0L-0U6"/>
                         </constraints>
                     </view>
                 </viewController>
