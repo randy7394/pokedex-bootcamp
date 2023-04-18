@@ -25,5 +25,6 @@ let pokemons: [Pokemon] = [
     Pokemon(name: "Sandshrew", type: "Ground"),
     Pokemon(name: "Nidoran", type: "Poison"),
     Pokemon(name: "Vulpix", type: "Fire"),
+    Pokemon(name: "Articuno", type: "Ice"),
     Pokemon(name: "Rapidash", type: "Fire")
 ]
