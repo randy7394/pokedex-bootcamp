@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
     
     @IBOutlet private var welcomeTitle: UILabel!
     @IBOutlet var collectionView: UICollectionView!
@@ -18,39 +18,31 @@ class ViewController: UIViewController {
         collectionView.delegate = self
         
         registerCell()
-        
-//        setUI()
     }
-    
-//    private func setUI() {
-//        welcomeTitle.font = UIFont.systemFont(ofSize: 34)
-//    }
 
-    @IBAction func didTapButton(_ sender: Any) {
+    @IBAction private func didTapButton(_ sender: Any) {
         print("Button clicked")
     }
     
     private func registerCell() {
-        let cell = UINib(nibName: "CollectionViewCell", bundle: nil)
-        collectionView.register(cell, forCellWithReuseIdentifier: "CollectionViewCell")
+        let cell = UINib(nibName: "PokemonCollectionViewCell", bundle: nil)
+        collectionView.register(cell, forCellWithReuseIdentifier: "PokemonCollectionViewCell")
     }
 }
 
 extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return pokemons.count
+        pokemons.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as? PokemonCollectionViewCell {
-            cell.nameLabel.text = "\(pokemons[indexPath.row].name)"
-            cell.typeLabel.text = "\(pokemons[indexPath.row].type)"
-            cell.pokePhoto.image = pokemons[indexPath.row].photo
-            
-            return cell
-        }
-        return UICollectionViewCell()
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PokemonCollectionViewCell", for: indexPath) as? PokemonCollectionViewCell
+        else { return UICollectionViewCell() }
+        
+        cell.nameLabel.text = "\(pokemons[indexPath.row].name)"
+        cell.typeLabel.text = "\(pokemons[indexPath.row].type)"
+        cell.pokePhoto.image = pokemons[indexPath.row].photo
+        return cell
     }
-    
-    
 }
