@@ -42,7 +42,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as? CollectionViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as? PokemonCollectionViewCell {
             cell.nameLabel.text = "\(pokemons[indexPath.row].name)"
             cell.typeLabel.text = "\(pokemons[indexPath.row].type)"
             cell.pokePhoto.image = pokemons[indexPath.row].photo
