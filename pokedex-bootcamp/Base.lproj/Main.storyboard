@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,33 +16,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Luego del cambio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ei2-im-RZw">
-                                <rect key="frame" x="101" y="411" width="191" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RfT-zB-696">
-                                <rect key="frame" x="159" y="519" width="75" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
-                                <connections>
-                                    <action selector="didTapButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3DN-bs-tq9"/>
-                                    <segue destination="Cy8-iJ-4zT" kind="show" id="RGY-X4-KML"/>
-                                </connections>
-                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Kqz-yL-zFB">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pVK-2K-hMG">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Ei2-im-RZw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5u4-g4-ghs"/>
-                            <constraint firstItem="Ei2-im-RZw" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="DmE-Ud-G53"/>
-                            <constraint firstItem="RfT-zB-696" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="110.5" id="HSf-FE-klt"/>
-                            <constraint firstItem="RfT-zB-696" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="u00-0L-0U6"/>
+                            <constraint firstItem="Kqz-yL-zFB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Sww-wV-NT3"/>
+                            <constraint firstItem="Kqz-yL-zFB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="UKX-Fy-Hod"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Kqz-yL-zFB" secondAttribute="trailing" id="Ykc-qT-Khy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Kqz-yL-zFB" secondAttribute="bottom" id="kNq-0T-6OS"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="welcomeTitle" destination="Ei2-im-RZw" id="XoT-yo-8cy"/>
+                        <outlet property="collectionView" destination="Kqz-yL-zFB" id="bOJ-rX-QTK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -54,11 +50,11 @@
             <objects>
                 <viewController id="Cy8-iJ-4zT" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="t5P-uz-lyV">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="POKEDEX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YMX-hq-vgy">
-                                <rect key="frame" x="143.66666666666666" y="59" width="106" height="29"/>
+                                <rect key="frame" x="143.66666666666666" y="93.666666666666671" width="106" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
