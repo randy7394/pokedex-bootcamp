@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ViewController: UIViewController {
+class ViewController: UIViewController {
     
     @IBOutlet private var welcomeTitle: UILabel!
     @IBOutlet var collectionView: UICollectionView!
