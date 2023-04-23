@@ -40,9 +40,22 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PokemonCollectionViewCell", for: indexPath) as? PokemonCollectionViewCell
         else { return UICollectionViewCell() }
         
-        cell.nameLabel.text = "\(pokemons[indexPath.row].name)"
-        cell.typeLabel.text = "\(pokemons[indexPath.row].type)"
+        cell.nameLabel.text = "Name: \(pokemons[indexPath.row].name)"
+        cell.typeLabel.text = "Type: \(pokemons[indexPath.row].type)"
+        cell.pokemonNumberLabel.text = "N.º \(pokemons[indexPath.row].pokemonnumber)"
         cell.pokePhoto.image = pokemons[indexPath.row].photo
         return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let secondViewController = storyboard?.instantiateViewController(identifier: "SecondViewController") as? SecondViewController
+            else {return}
+        
+            secondViewController.photoSecondVC = pokemons[indexPath.row].photo
+            secondViewController.nameSecondVC = pokemons[indexPath.row].name
+            secondViewController.typeSecondVC = pokemons[indexPath.row].type
+            secondViewController.pokemonNumberSecondVC = "N.º \(pokemons[indexPath.row].pokemonnumber)"
+        secondViewController.pokemonBiologySecondVC = pokemons[indexPath.row].biology
+            self.navigationController?.pushViewController(secondViewController, animated: true)
     }
 }
