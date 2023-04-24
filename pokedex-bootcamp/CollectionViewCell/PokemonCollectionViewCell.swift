@@ -17,8 +17,6 @@ final class PokemonCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.pokePhoto.layer.cornerRadius = self.pokePhoto.frame.size.width / 8
-        
     }
 
 }
