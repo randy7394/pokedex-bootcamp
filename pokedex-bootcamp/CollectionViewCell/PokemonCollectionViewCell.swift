@@ -9,13 +9,14 @@ import UIKit
 
 final class PokemonCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet var pokemonNumberLabel: UILabel!
     @IBOutlet var typeLabel: UILabel!
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var pokePhoto: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
 
 }
